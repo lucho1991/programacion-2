@@ -17,7 +17,6 @@
                 <td>Edad</td>
                 <td>Correo Electrónico</td>
                 <td>Modificar</td>
-                <td>Eliminar</td>
             </tr>  
             <?php
 

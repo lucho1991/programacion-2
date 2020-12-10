@@ -12,29 +12,26 @@
         ­<table>
             <tr>
                 <td>ID</td>
-                <td>Apellido</td>
                 <td>Nombre</td>
-                <td>Edad</td>
-                <td>Correo Electrónico</td>
+                <td>Curso</td>
+                <td>Carrera</td>
                 <td>Modificar</td>
-                <td>Eliminar</td>
             </tr>  
             <?php
 
-            require "./../../funcionabilidad/acciones_para_alumnos.php";
-            $alumnos = new alumnos();
-            $listado_alumnos = $alumnos->listar_alumnos();
+            require "./../../funcionabilidad/acciones_para_materias.php";
+            $alumnos = new materias();
+            $listado_materias = $alumnos->listar_materias();
             
-            foreach ($listado_alumnos as $key) {
+            foreach ($listado_materias as $key) {
               ?>
                 <tr>
                     <td><?php echo $key['id'] ?></td>
-                    <td><?php echo $key['apellido'] ?></td>
-                    <td><?php echo $key['nombres'] ?></td>
-                    <td><?php echo $key['edad'] ?></td>
-                    <td><?php echo $key['email'] ?></td>
+                    <td><?php echo $key['nombre'] ?></td>
+                    <td><?php echo $key['curso'] ?></td>
+                    <td><?php echo $key['carrera'] ?></td>
 
-                    <td><?php echo'<a href="' . htmlspecialchars("modificar_alumno.php?id=" .urlencode($key['id'])) . '" style="color:white;"><font face="Century Gothic">Modificar</font></a>' ?></td>
+                    <td><?php echo'<a href="' . htmlspecialchars("modificar_materia.php?id=" .urlencode($key['id'])) . '" style="color:white;"><font face="Century Gothic">Modificar</font></a>' ?></td>
                 </tr>      
             <?php
             }

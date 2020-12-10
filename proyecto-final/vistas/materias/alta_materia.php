@@ -7,18 +7,16 @@
 </head>
 <body style="background-color:#88B04B";>
     <br>
-    <form method="POST" action="acciones_para_alumnos.php">
-        <h2><font face="Century Gothic">Ingrese los datos a guardar en base de datos</font></h2>
-        <label>Apellido </label><br>
-        <input type="text" name="apellido" placeholder="Ingrese un apellido" ><br>
-        <label>Nombre </label><br>
-        <input type="text" name="nombre" placeholder="Ingrese los nombres" ><br>
-        <label>Edad </label><br>
-        <input type="number" name="edad"  placeholder="Ingrese la edad"><br>
-        <label>Correo </label><br>
-        <input type="email" name="email" placeholder="Ingrese el email" ><br>
-        <br>
-        <input type="submit" name="guardar" value="guardar"> 
+    <form method="POST" action="acciones_para_materias.php">
+        <h2><font face="Century Gothic">Gestion de alta de materias</font></h2>
+        <label>Nombre de la materia </label><br>
+        <input type="text" name="nombre" placeholder="Ingrese el nombre " ><br>
+        <label>Año en cual se dicta</label><br>
+        <input type="number" min="1" max="10" name="curso" placeholder="Ingrese el curso" ><br>
+        <label>Carrera a la que pertenece</label><br>
+        <input type="text" name="carrera"  placeholder="Ingrese la carreara"><br>
+               <br>
+        <input type="submit" name="guardar" value="Guardar"> 
         <br>
 
         <br>
