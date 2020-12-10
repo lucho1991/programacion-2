@@ -23,7 +23,7 @@ class alumnos{
 	private $alumnos;
 
 	public function __construct(){
-		require "db_connect.php";
+		require "../../base_de_datos/db_connect.php";
 
         $this->db=Conectar::conexion();
         $this->alumnos=array();
