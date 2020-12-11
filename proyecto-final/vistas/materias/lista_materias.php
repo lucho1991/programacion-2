@@ -19,7 +19,7 @@
             </tr>  
             <?php
 
-            require "./../../funcionabilidad/acciones_para_materias.php";
+            require "../../funcionabilidad/acciones_para_materias.php";
             $alumnos = new materias();
             $listado_materias = $alumnos->listar_materias();
             
@@ -37,8 +37,8 @@
             }
         ?>
     </table>
+            <h5><a href="../../index.html">Ir al inicio</a></h5>
+
     <body>
         <html>
 
-
-<a href=view_exp.php?compna=",urlencode($compname),"

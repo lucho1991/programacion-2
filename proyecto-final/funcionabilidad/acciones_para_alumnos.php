@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 class alumnos{
 	private $db;
-	private $alumnos;
+	private $inscripciones;
 
 	public function __construct(){
-		require $_SERVER['DOCUMENT_ROOT']."/programacion-2/proyecto-final/base_de_datos/db_connect.php";
+		require_once $_SERVER['DOCUMENT_ROOT']."/programacion-2/proyecto-final/base_de_datos/db_connect.php";
 
         $this->db=Conectar::conexion();
-        $this->alumnos=array();
+        $this->inscripciones=array();
     }
     
 
@@ -36,7 +36,7 @@ class alumnos{
 	    $resultado = $this->db->query($consulta_insertar_alumno);
 	    if ($resultado){
 	    	echo "Datos insertados";
-	    	HEADER("location:./../vistas/alumnos/lista_alumnos.php");
+	    	HEADER("location:../vistas/alumnos/lista_alumnos.php");
 	    } else {
 	    	echo "Los datos no se pudieron insertar";
 	    }
@@ -49,7 +49,7 @@ class alumnos{
 	    $resultado = $this->db->query($consulta_modificar_alumno);
 	    if ($resultado){
 	    	echo "Datos modificados";
-	    	HEADER("location:./../vistas/alumnos/lista_alumnos.php");
+	    	HEADER("location:../vistas/alumnos/lista_alumnos.php");
 	    } else {
 	    	echo "Los datos no se pudieron modificar";
 	    }
@@ -70,6 +70,15 @@ class alumnos{
 		$consulta_listar_alumnos = "SELECT * FROM alumnos WHERE id = '$id';";
         $consulta=$this->db->query($consulta_listar_alumnos);
         return $consulta->fetch_assoc();
+    }
+
+    public function listar_alumnos_acotada(){
+		$consulta_listar_alumnos = "SELECT id, CONCAT(CONCAT(apellido, ', '), nombres) as apellidoynombre FROM alumnos;";
+        $consulta=$this->db->query($consulta_listar_alumnos);
+        while($filas=$consulta->fetch_assoc()){
+            $this->alumnos[]=$filas;
+        }
+        return $this->alumnos;
     }
 }
 

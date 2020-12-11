@@ -20,7 +20,7 @@
             </tr>  
             <?php
 
-            require "./../../funcionabilidad/acciones_para_alumnos.php";
+            require_once $_SERVER['DOCUMENT_ROOT']."/programacion-2/proyecto-final/funcionabilidad/acciones_para_alumnos.php";
             $alumnos = new alumnos();
             $listado_alumnos = $alumnos->listar_alumnos();
             
@@ -39,6 +39,9 @@
             }
         ?>
     </table>
+
+            <h5><a href="../../index.html">Ir al inicio</a></h5>
+
     <body>
         <html>
 

@@ -7,14 +7,14 @@
 </head>
 <body style="background-color:#88B04B";>
     <br>
-    <form method="POST" action="acciones_para_alumnos.php">
+    <form method="POST" action="../../funcionabilidad/acciones_para_alumnos.php"> 
         <h2><font face="Century Gothic">Ingrese los datos a guardar en base de datos</font></h2>
         <label>Apellido </label><br>
         <input type="text" name="apellido" placeholder="Ingrese un apellido" ><br>
         <label>Nombre </label><br>
         <input type="text" name="nombre" placeholder="Ingrese los nombres" ><br>
         <label>Edad </label><br>
-        <input type="number" name="edad"  placeholder="Ingrese la edad"><br>
+        <input type="number" name="edad" min="1" placeholder="Ingrese la edad"><br>
         <label>Correo </label><br>
         <input type="email" name="email" placeholder="Ingrese el email" ><br>
         <br>
@@ -23,6 +23,7 @@
 
         <br>
 
+        <h5><a href="../../index.html">Ir al inicio</a></h5>
 
 
 

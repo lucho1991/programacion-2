@@ -8,11 +8,11 @@
 <body style="background-color:#88B04B";>
     <br>
     <?php
-        require "./../../funcionabilidad/acciones_para_materias.php";
+        require "../../funcionabilidad/acciones_para_materias.php";
         $materias = new materias();
         $materia = $materias->listar_materia_por_id($_GET['id']);
     ?>
-    <form method="POST" action="./../../funcionabilidad/acciones_para_materias.php">
+    <form method="POST" action="../../funcionabilidad/acciones_para_materias.php">
         <h2><font face="Century Gothic">Ingrese los datos a guardar en base de datos</font></h2>
         <label>Id </label><br>
         <input type="text" id="id" name="id"  value="<?php echo $materia['id'] ?>" readonly><br>
@@ -29,6 +29,7 @@
         <br>
 
 
+        <h5><a href="../../index.html">Ir al inicio</a></h5>
 
         
     <body>

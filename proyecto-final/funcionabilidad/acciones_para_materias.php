@@ -22,7 +22,7 @@ class materias{
 	private $materias;
 
 	public function __construct(){
-		require $_SERVER['DOCUMENT_ROOT']."/programacion-2/proyecto-final/base_de_datos/db_connect.php";
+		require_once  $_SERVER['DOCUMENT_ROOT']."/programacion-2/proyecto-final/base_de_datos/db_connect.php";
 
         $this->db=Conectar::conexion();
         $this->materias=array();
@@ -35,7 +35,7 @@ class materias{
 	    $resultado = $this->db->query($consulta_insertar_materia);
 	    if ($resultado){
 	    	echo "Datos insertados";
-	    	HEADER("location:./../vistas/materias/lista_materias.php");
+	    	HEADER("location:../vistas/materias/lista_materias.php");
 	    } else {
 	    	echo "Los datos no se pudieron insertar";
 	    }
@@ -48,7 +48,7 @@ class materias{
 	    $resultado = $this->db->query($consulta_modificar_materia);
 	    if ($resultado){
 	    	echo "Datos modificados";
-	    	HEADER("location:./../vistas/materias/lista_materias.php");
+	    	HEADER("location:../vistas/materias/lista_materias.php");
 	    } else {
 	    	echo "Los datos no se pudieron modificar";
 	    }
@@ -69,6 +69,15 @@ class materias{
 		$consulta_listar_materias = "SELECT * FROM materias WHERE id = '$id';";
         $consulta=$this->db->query($consulta_listar_materias);
         return $consulta->fetch_assoc();
+    }
+
+    public function listar_materias_acotada(){
+    	$consulta_listar_materias = "SELECT id, nombre FROM materias;";
+        $consulta=$this->db->query($consulta_listar_materias);
+        while($filas=$consulta->fetch_assoc()){
+            $this->materias[]=$filas;
+        }
+        return $this->materias;
     }
 }
 
