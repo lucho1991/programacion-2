@@ -19,7 +19,7 @@
         <label>Nombre de la materia </label><br>
         <input type="text" name="nombre" value=<?php echo $materia['nombre']?> ><br>
         <label>Año en cual se dicta</label><br>
-        <input type="number" min="1" max="10" name="curso" value=<?php echo $materia['curso']?> ><br>
+        <input type="number" min="1" name="curso" value=<?php echo $materia['curso']?> ><br>
         <label>Carrera a la que pertenece</label><br>
         <input type="text" name="carrera" value=<?php echo $materia['carrera']?>><br>
         <br>
